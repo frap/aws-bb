@@ -1,0 +1,13 @@
+{:paths ["dev" "src"]
+ :deps {org.babashka/json {:mvn/version "0.1.1"}
+        com.cognitect.aws/endpoints {:mvn/version "1.1.12.682"}
+        grzm/awyeah-api {:git/url "https://github.com/grzm/awyeah-api"
+                         :git/sha "d98a9f6210c61d64f22e9b577d2254d6f6d2f35f"}
+        com.cognitect.aws/s3 {:mvn/version "868.2.1580.0"}
+        babashka/spec.alpha {:git/url "https://github.com/babashka/spec.alpha"
+                             :git/sha "951b49b8c173244e66443b8188e3ff928a0a71e7"}}
+ :tasks {
+ :requires ([tasks])
+  add-dep {:doc "Add a dependency to the playground"
+           :task (tasks/add-dep *command-line-args*)}}
+ }
